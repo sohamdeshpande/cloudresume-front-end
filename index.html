@@ -177,20 +177,15 @@ related problems.</p>
 </div>
 <div class="w3-content w3-container w3-padding-64" id="about">
   <p>Visitor</p>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-      $(document).ready(function() {
-        $.ajax({
-          url: "https://931rjjj1f8.execute-api.ap-south-1.amazonaws.com/getCount?id=count",
-          type: "GET",
-          success: function(result) {
-            console.log(result);
-          },
-          error: function(error) {
-            console.log(error);
-          }
-        });
-      });
+<script>
+      async function getCount() {
+        let response = await fetch(
+          "https://931rjjj1f8.execute-api.ap-south-1.amazonaws.com/getCount?id=count"
+        );
+        let data = await response.json();
+        return data;
+      }
+      getUsers().then(data => console.log(data));
     </script>
 </div>
 <!-- Footer -->
