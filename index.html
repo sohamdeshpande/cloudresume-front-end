@@ -193,7 +193,7 @@ related problems.</p>
   console.error('Error:', error);
 });*/
 
-fetch('https://931rjjj1f8.execute-api.ap-south-1.amazonaws.com/getCount?id=count',
+/*fetch('https://931rjjj1f8.execute-api.ap-south-1.amazonaws.com/getCount?id=count',
   headers: {
     'Content-Type': 'application/json',
   }).then(function(response) {
@@ -202,7 +202,16 @@ fetch('https://931rjjj1f8.execute-api.ap-south-1.amazonaws.com/getCount?id=count
   console.log(data);
 }).catch(function() {
   console.log("Booo");
-});
+});*/
+
+{
+        url: "931rjjj1f8.execute-api.ap-south-1.amazonaws.com/getCount?id=count",
+        
+        contentType: "application/json",
+        success: function (data) {
+            console.log(data)
+        }
+    }
     </script>
 </div>
 <!-- Footer -->
