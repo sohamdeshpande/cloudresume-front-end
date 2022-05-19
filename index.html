@@ -179,21 +179,11 @@ related problems.</p>
 <div class="w3-content w3-container w3-padding-64" id="about">
   <p>Visitor</p>
 <script>
-      /*async function getCount() {
-        let response = await fetch(
-          "https://931rjjj1f8.execute-api.ap-south-1.amazonaws.com/getCount?id=count"
-        );
-        let data = await response.json();
-        return data;
-      }
-      getCount().then(data => console.log(data));*/
-
-      fetch('https://931rjjj1f8.execute-api.ap-south-1.amazonaws.com/getCount?id=count', {
+  /*fetch('https://931rjjj1f8.execute-api.ap-south-1.amazonaws.com/getCount?id=count', {
   method: 'GET', // or 'PUT'
   headers: {
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify(data),
 })
 .then(response => response.json())
 .then(data => {
@@ -201,6 +191,17 @@ related problems.</p>
 })
 .catch((error) => {
   console.error('Error:', error);
+});*/
+
+fetch('https://931rjjj1f8.execute-api.ap-south-1.amazonaws.com/getCount?id=count',
+  headers: {
+    'Content-Type': 'application/json',
+  }).then(function(response) {
+  return response.json();
+}).then(function(data) {
+  console.log(data);
+}).catch(function() {
+  console.log("Booo");
 });
     </script>
 </div>
