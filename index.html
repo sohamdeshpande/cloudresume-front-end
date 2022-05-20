@@ -180,15 +180,16 @@ related problems.</p>
   <p>Visitor</p>
   Latest count
 <script>
-      async function getCount() {
-        let response = await fetch(
-          "https://931rjjj1f8.execute-api.ap-south-1.amazonaws.com/getCount?id=count"
-        );
-        let data = await response.json();
-        return data;
-      }
-      getCount().then(data => console.log(data));
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+        document.getElementById("visits").innerHTML = xhttp.responseText;
+    }
+};
+xhttp.open("GET", "https://931rjjj1f8.execute-api.ap-south-1.amazonaws.com/getCount?id=count", true);
+xhttp.send();
     </script>
+    <span id="visits"></span>
 </div>
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
