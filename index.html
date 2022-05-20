@@ -178,9 +178,17 @@ related problems.</p>
 </div>
 <div class="w3-content w3-container w3-padding-64" id="about">
   <p>Visitor</p>
-<p>
-                    Visits: <span id="visits"></span>
-                    <p>
+  Latest count
+<script>
+      async function getCount() {
+        let response = await fetch(
+          "https://931rjjj1f8.execute-api.ap-south-1.amazonaws.com/getCount?id=count"
+        );
+        let data = await response.json();
+        return data;
+      }
+      getCount().then(data => console.log(data));
+    </script>
 </div>
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
